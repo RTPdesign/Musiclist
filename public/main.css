@@ -1,0 +1,110 @@
+*{
+    font-size: 18px;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    margin: 0 auto;
+    color: #2fa88a;
+}
+
+.page-wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.flexLogin{
+    padding: 5px 15px;
+    margin: 8px;
+    float: right;
+}
+
+input {
+    font-size: 20px;
+    padding: 5px 15px;
+    margin: 8px;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    color: whitesmoke;
+    font-size: 30px;
+    /*text-shadow: 0 1px 0 #a37642;*/
+    float: left;
+    padding: 15px;
+}
+
+a {
+    color: #a37642;
+    /*color: #a37642;*/
+    font-size: 40px;
+    font-weight: 400;
+    float: left;
+    padding: 15px;
+}
+
+h2 {
+    
+    color: #a37642;
+    /*color: #6eccba;*/
+    font-size: 25px;
+    float: left;
+    padding: 15px;
+}
+
+h3 {
+    /*float: left;*/
+    color: #a37642;
+    /*color: #6eccba;*/
+    font-size: 20px;
+    padding: 5px;
+    margin: 50px 10px 0px 0px;
+}
+
+h4 {
+    float: left;
+    color: #a37642;
+    font-size: 17px;
+    padding: 15px;
+    margin: 5px 10px 0px 0px;
+}
+
+html{
+    /*background-image: url("https://media.giphy.com/media/l3q2BYVU8CrhtCfqU/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/RypOsqdoSz0D6/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/xsPmbjZwUQ2dO/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/FpupmA3AR40HC/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/PeFSCXkkVTw6Q/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/DbreaArbuPiJG/giphy.gif");*/
+
+    /*background-image: url("https://media.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/kREagvAJBvH0s/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/3oKIPzsIkC5cczAQ4E/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/3oz8xYp8CIhl05M1Tq/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/xTiTngM2KUR6ja7yuI/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/pSH5Z0fESUZ2M/giphy.gif");*/
+
+    /*background-image: url("https://media.giphy.com/media/l4FGmqQJf1mWswghy/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/l4FGmqQJf1mWswghy/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/3o6Zt64IUWUy789nEs/giphy.gif");*/
+
+    /*background-image: url("https://media.giphy.com/media/z60d4XW2maR9K/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/l0MYKDPgWd3pFaGNq/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/3o7TKt2nShRwLMFiP6/giphy.gif");*/
+    /*background-image: url("http://media.giphy.com/media/I2sZ6qckkhfLG/giphy.gif");*/
+    /*background-image: url("https://www.webpagefx.com/blog/wp-content/uploads/2014/06/image_08_davidope.gif");*/
+    /*background-image: url("https://www.webpagefx.com/blog/wp-content/uploads/2014/06/image_06_davidope.gif");*/
+    /*background-image: url("http://68.media.tumblr.com/tumblr_kv87k0HqaD1qzt4vjo1_500.gif");*/
+    /*background-image: url("http://68.media.tumblr.com/tumblr_lcd2v5ZGkg1qzt4vjo1_500.gif");*/
+    /*background-image: url("http://68.media.tumblr.com/00eecc4d9d0a9d1b5403dd6dbd7f273b/tumblr_meqgu0J9531qzt4vjo1_500.gif");*/
+    /*background-image: url("https://media.giphy.com/media/v6yo5fZtSLPpu/giphy.gif");*/
+
+    /*background-image: url("https://media.giphy.com/media/mPPu9VhiS9vos/giphy.gif");*/
+    /*background-image: url("http://media.giphy.com/media/UuDxS2EBRZSyA/giphy.gif");*/
+    
+    background: linear-gradient(to bottom right, #232323, #2d3a37);
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
