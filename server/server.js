@@ -9,6 +9,15 @@ import bodyParser from 'body-parser';
 import webpack from 'webpack';
 import config from '../webpack.config';
 
+if(process.env.ENVIRONMENT === 'dev'){
+  if(!process.env.DB){
+    process.env.DB = 'localhost:27017/wishlist';
+  }
+  if(!process.env.PORT){
+    process.env.PORT = 3000;
+  }
+}
+
 // Initializing our express app
 const app = express();
 

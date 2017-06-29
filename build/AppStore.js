@@ -12,7 +12,7 @@ const defaultState = {
     user: {
         _id: '',
         userName: '',
-        wishLists: '',
+        wishlists: [],
     },
     loggedIn: false,
 };

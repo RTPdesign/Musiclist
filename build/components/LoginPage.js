@@ -10,9 +10,11 @@ export default class LoginPage extends React.Component{
     this.handleClick = this.handleClick.bind(this);
     this.handleSignup = this.handleSignup.bind(this);
 
-     this.state = {errors: {
-        invalidLogin: false
-    }}
+    this.state = {
+        errors: {
+            invalidLogin: false
+        }
+    }
   }
 
 handleClick(event){

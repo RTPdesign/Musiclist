@@ -7,5 +7,6 @@
 process.env.PORT = 3000;
 process.env.DB = 'wishlist';
 process.env.ENVIRONMENT = 'dev';
+process.env.HOST = 'localhost';
 
 // Notice we do not export these variables. `process` object is specific to Node and works out-of-the-box.

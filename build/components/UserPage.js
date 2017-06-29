@@ -33,7 +33,7 @@ export default class UserPage extends React.Component{
       <div>
         <h1>Welcome <a>{this.props.user.userName}</a></h1><br/>
         <h2>Wishlists</h2>
-        <Route path='/secure/whishlist' render={(routeProps) => <Wishlists {...this.props} {...routeProps} />} />
+        <Route path='/secure/wishlist/:id' render={(routeProps) => <Wishlists {...this.props} {...routeProps} />} />
         {/*<Link to={`${match.url}/wishlist`}>Wishlists</Link>*/}
         {/*<Status {...this.props}/>*/}
         

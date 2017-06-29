@@ -17,6 +17,14 @@ export let login = (user, loggedIn) => {
     };
 }
 
+export let loadWishlists = (wishlists) => {
+    console.log('dispatch load wishlists');
+    return {
+        type: 'LOAD_WISHLISTS',
+        wishlists
+    };
+}
+
 export let logout = () => {
     console.log('dispatch LOGOUT');
     return {

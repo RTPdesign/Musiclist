@@ -5,10 +5,10 @@ import axios from 'axios';
 export default class Signup extends React.Component {
     constructor() {
         super();
+        
         this.state = {
-            errors: {
-                mismatchPasswords: false
-            }
+            registrationMsg: "",
+                invalidLogin: false
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleHome = this.handleHome.bind(this);
@@ -27,10 +27,15 @@ export default class Signup extends React.Component {
                     userName: username,
                     password: password
                 }).then(res => {
-                    console.log('We have registered a user!', res.data.user);
+
                     if (res.data.loggedIn) {
+                        console.log('We have registered a user!', res.data.user);
                         this.props.login(res.data.user);
                         this.props.history.push('/secure');
+                    }
+                    else{
+                        console.log('User already Exists', res.data.user);
+                        this.setState({registrationMsg: "User already exits"});
                     }
 
                 });
@@ -45,12 +50,9 @@ export default class Signup extends React.Component {
     };
 
     render() {
-        let errorMessages = [];
-        if (this.state.errors.mismatchPasswords) {
-            errorMessages.push(<div className="error message">Error: Passwords do not match.</div>);
-        }
         return (
             <div>
+                <h4>{this.state.registrationMsg}</h4>
                 <h3>Sign Up</h3>
                 <label>User Name: <input type="text" ref="username" /></label><br />
                 <label>Password: <input type="password" ref="password" /></label><br />
