@@ -4,7 +4,7 @@
  */
 import {Wishlist} from '../models/Wishlist';
 
-export let createWishlist = (wishlist, next) => {
+export let createWishlist = (userId, wishlist, next) => {
     Wishlist.create(wishlist, next);
 };
 

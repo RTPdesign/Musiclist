@@ -16,7 +16,10 @@ let user = (state = {}, action) => {
                 wishlists: []
             };
         case 'LOAD_WISHLISTS':
-            return Object.assign({}, state, {wishlists: wishlist(state.wishlists, action)});
+            let myNewState = Object.assign({}, state, {wishlists: wishlist(state.wishlists, action)});
+            // debugger;
+            console.log(myNewState);
+            return myNewState;
         case 'ADD_USER':
             return {...state, ...action.user};
         default:

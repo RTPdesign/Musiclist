@@ -5,6 +5,7 @@
 'use strict';
 // import {createTask} from '../services/taskService';
 import * as UserService from '../services/userService';
+import axios from 'axios';
 
 export default (app) => {
 
@@ -55,6 +56,57 @@ export default (app) => {
         });
     });
 
+    app.get('/wishlists', (req, res) => {
+        res.json({wishlists: [
+            {title: 'Hello', albums: []}
+        ]});
+    });
+
+    app.put('/users/:userId/wishlists', (req, res) => {
+
+        console.log(req.params, req.body);
+        UserService.pushWishlist(req.params.userId, req.body, (err, user) => {
+            let response;
+            if (!err && user) {
+                response = user;
+            }
+            else {
+                response = { error: 'List can not be created.' };
+            }
+            res.json(response);
+        });
+    });
+
+    app.delete('/users/:userId/wishlists/:id', (req, res) => {
+        UserService.deleteWishlist(req.params.userId, req.params.id, (err, user) => {
+            let response;
+            if (!err && user) {
+                response = user;
+            }
+            else {
+                response = { error: 'List can not be deleted.' };
+            }
+            res.json(response);
+        });
+    });
+
+    app.get('/albums', (req, res) => {
+        axios.get('https://api.discogs.com/database/search?q=Nirvana&type=release&key=DDPqQlwxZjDiBRlxRCty&secret=aHzyGTOEEordvSFvILojanlGrOfBCzZr').then((response) => {
+            res.json({albums: response.data.results});
+        });
+    });
+
+    app.post('/albums', (req, res) => {
+        axios.post('https://api.discogs.com/database/search?q=Nirvana&type=release&key=DDPqQlwxZjDiBRlxRCty&secret=aHzyGTOEEordvSFvILojanlGrOfBCzZr').then((response) => {
+            res.json({albums: response.data.results});
+        });
+    });
+
+    app.delete('/albums', (req, res) => {
+        axios.delete('https://api.discogs.com/database/search?q=Nirvana&type=release&key=DDPqQlwxZjDiBRlxRCty&secret=aHzyGTOEEordvSFvILojanlGrOfBCzZr').then((response) => {
+            res.json({albums: response.data.results});
+        });
+    });    
     // app.get('/users', (req, res) => {
     //     UserService.getAllUsers((err, users) => {
     //         if(users){

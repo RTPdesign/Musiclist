@@ -25,6 +25,7 @@ input {
 
 h1 {
     font-family: 'Lato', sans-serif;
+    /*color: #f9df7f;*/
     color: whitesmoke;
     font-size: 30px;
     /*text-shadow: 0 1px 0 #a37642;*/
@@ -68,37 +69,28 @@ h4 {
 }
 
 html{
-    /*background-image: url("https://media.giphy.com/media/l3q2BYVU8CrhtCfqU/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/RypOsqdoSz0D6/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/xsPmbjZwUQ2dO/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/FpupmA3AR40HC/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/PeFSCXkkVTw6Q/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/DbreaArbuPiJG/giphy.gif");*/
+    
+        /*background-image: url("https://media.giphy.com/media/5xtDarrAeg6QeSUNSuI/giphy.gif");*/
+        /*background-image: url("https://media.giphy.com/media/vWCW09BvO7P5S/giphy.gif");*/
+        /*background-image: url("https://68.media.tumblr.com/9f99c544c27c6a749bda713618c0871f/tumblr_om25r0YuuE1r47bczo1_500.gif");*/
+        /*background-image: url("https://az616578.vo.msecnd.net/files/2016/06/27/636025939249776048845530468_recordplayer.gif");*/
+        /*Zbackground-image: url("https://waxramblearchive.files.wordpress.com/2013/05/iyu1vmk.gif");*/
 
-    /*background-image: url("https://media.giphy.com/media/l2JJC1sjFGQ22rNSw/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/kREagvAJBvH0s/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/3oKIPzsIkC5cczAQ4E/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/3oz8xYp8CIhl05M1Tq/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/xTiTngM2KUR6ja7yuI/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/pSH5Z0fESUZ2M/giphy.gif");*/
-
-    /*background-image: url("https://media.giphy.com/media/l4FGmqQJf1mWswghy/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/l4FGmqQJf1mWswghy/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/3o6Zt64IUWUy789nEs/giphy.gif");*/
-
-    /*background-image: url("https://media.giphy.com/media/z60d4XW2maR9K/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/l0MYKDPgWd3pFaGNq/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/3o7TKt2nShRwLMFiP6/giphy.gif");*/
-    /*background-image: url("http://media.giphy.com/media/I2sZ6qckkhfLG/giphy.gif");*/
-    /*background-image: url("https://www.webpagefx.com/blog/wp-content/uploads/2014/06/image_08_davidope.gif");*/
-    /*background-image: url("https://www.webpagefx.com/blog/wp-content/uploads/2014/06/image_06_davidope.gif");*/
-    /*background-image: url("http://68.media.tumblr.com/tumblr_kv87k0HqaD1qzt4vjo1_500.gif");*/
-    /*background-image: url("http://68.media.tumblr.com/tumblr_lcd2v5ZGkg1qzt4vjo1_500.gif");*/
-    /*background-image: url("http://68.media.tumblr.com/00eecc4d9d0a9d1b5403dd6dbd7f273b/tumblr_meqgu0J9531qzt4vjo1_500.gif");*/
-    /*background-image: url("https://media.giphy.com/media/v6yo5fZtSLPpu/giphy.gif");*/
-
-    /*background-image: url("https://media.giphy.com/media/mPPu9VhiS9vos/giphy.gif");*/
-    /*background-image: url("http://media.giphy.com/media/UuDxS2EBRZSyA/giphy.gif");*/
+        /*background-image: url("http://music.howwe.biz/images/giphy.gif");*/
+        /*background-image: url("https://cdn.dribbble.com/users/8666/screenshots/2151918/4musictrandrib.gif");*/
+        /*background-image: url("http://www.picgifs.com/glitter-gifs/m/music/picgifs-music-575108.gif");*/
+        /*background-image: url("http://vinylgif.com/gifs/201411/frank-sinatra---something-stupid-vinyl-record-player.gif");*/
+        /*background-image: url("http://vinylgif.com/gifs/201412/casette-vs-vinyl-animation.gif");*/
+        /*background-image: url("https://ksr-ugc.imgix.net/assets/003/922/362/4250c43fea92fdb480c75bcfb635f55f_original.gif?w=680&fit=max&v=1433437655&auto=format&gif-q=50&q=92&s=717d717b33800c71f6e556bc012da67b");*/
+        /*background-image: url("http://www.romainhalsdorf.com/turntable1.gif");*/
+        /*background-image: url("https://media.giphy.com/media/sqNK2OCkxycAo/giphy.gif");*/
+        /*background-image: url("https://media.giphy.com/media/26tn7BL2UDTMVWovu/giphy.gif");*/
+        /*Zbackground-image: url("https://media.giphy.com/media/ThQu29EPeMWzu/giphy.gif");*/
+        /*background-image: url("https://media.giphy.com/media/OtzkMCnyIq5qM/source.gif");*/
+        /*background-image: url("https://media.giphy.com/media/tCK59OvZkEWsM/source.gif");*/
+    opacity: 0.8;
+    /*background-image: url("https://68.media.tumblr.com/b1a0ea765a3b771e7318addbead23e55/tumblr_oosglvwr9z1r47bczo1_400.gif");*/
+    /*background-image: url("http://vinylgif.com/gifs/201411/beach-record-player.gif");*/
     
     background: linear-gradient(to bottom right, #232323, #2d3a37);
 
@@ -106,5 +98,6 @@ html{
     background-repeat: no-repeat;
 
     height: 100%;
+
     -webkit-font-smoothing: antialiased;
 }

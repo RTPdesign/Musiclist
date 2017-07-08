@@ -55,21 +55,26 @@ handleClick(event){
       errorMessage = (<h4>Invalid Username or Password</h4>);
     }     
     return(
-      <div>
-        <h1>Welcome to Musiclist.</h1>
-        <div>
-            <div className="flexLogin">
-              <label><input type='userName' autoComplete='on' placeholder='User Name' ref='userName' maxLength="50" required/></label>
-              <label><input type='password' placeholder='Password' ref='password' maxLength="100" required/></label>
-              <button type='button' onClick={this.handleClick}>Log In</button>
-              {errorMessage}
-            </div>
-            <div><h2></h2></div>
+      <div> 
+          <h1>Welcome to Musiclist.</h1>
+        <div className="row">
+          <div className="col x16"> 
             <div>
-                <button type='button' onClick={this.handleSignup}>Sign Up</button>
-                <Route path='/signup' render={(routeProps) => <Signup {...this.props} {...routeProps} />} />
+                <div className="flexLogin">
+                  {/*<img src="http://brokensocialscene.craft-shop.ca/image/cache/catalog/hugofthunder2-500x500.jpg" height="300" width="300"/>*/}
+                  <label><input type='userName' autoComplete='on' placeholder='User Name' ref='userName' maxLength="50" required/></label>
+                  <label><input type='password' placeholder='Password' ref='password' maxLength="100" required/></label>
+                  <button type='button' onClick={this.handleClick}>Log In</button>
+                  {errorMessage}
+                </div>
+                <div><h2></h2></div>
+                <div>
+                    <button type='button' onClick={this.handleSignup}>Sign Up</button>
+                    <Route path='/signup' render={(routeProps) => <Signup {...this.props} {...routeProps} />} />
+                </div>
             </div>
-        </div>
+          </div> 
+        </div> 
       </div>
     );
   }

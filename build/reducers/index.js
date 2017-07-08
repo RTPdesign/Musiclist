@@ -5,8 +5,7 @@ import {routerReducer} from 'react-router-redux';
 
 import user from './user';
 import loggedIn from './loggedIn';
-import wishlist from './wishlist';
 
-const rootReducer = combineReducers({user, loggedIn, wishlist, routing: routerReducer});
+const rootReducer = combineReducers({user, loggedIn, routing: routerReducer});
 
 export default rootReducer;

@@ -4,20 +4,21 @@ import axios from 'axios';
 export default class Wishlists extends React.Component {
     constructor() {
         super();
-        this.state = {
+/*        this.state = {
             users: []
-        };
+        };*/
     }
 
     componentWillMount() {
         axios.get('/wishlists').then(response => {
+            this.props.loadWishlists(response.data);
             //data will have an object of response.data.users list...
-            console.log(response.data);
-            if (response.data) {
-                this.setState({
-                    users: response.data
-                });
-            }
+            // console.log(response.data);
+            // if (response.data) {
+            //     this.setState({
+            //         users: response.data
+            //     });
+            // }
         });
     }
 
@@ -32,22 +33,27 @@ export default class Wishlists extends React.Component {
     render() {
         
         let wishList = [];
-        if (this.state.users && this.state.users.length > 0) {
-            wishList = this.state.users.map(user => {
+        wishList = this.props.user.wishlists.map(user => {
+            return (<li key={status._id + '-status'}>{status.status + ' '}<button onClick={() => {
+            this.handleDelete(status._id);
+        }}>Remove Status</button></li>);
+        });
+        // if (this.state.users && this.state.users.length > 0) {
+            // wishList = this.state.users.map(user => {
                 
-                return (
-                    <div key={user._id + '-user'}>
-                         <h2><a href="#">{user.firstName + ' '} {user.lastName}</a></h2>
-                         <h3>{user.email}<br/>
-                             {user.age}<br/>
-                             {user.gender}<br/>
-                             {user.school}<br/>
-                             {user.job}<br/>
-                             </h3>
-                    </div>
-                )
-            });
-        };
+                // return (
+                    // <div key={user._id + '-user'}>
+                    //      <h2><a href="#">{user.firstName + ' '} {user.lastName}</a></h2>
+                    //      <h3>{user.email}<br/>
+                    //          {user.age}<br/>
+                    //          {user.gender}<br/>
+                    //          {user.school}<br/>
+                    //          {user.job}<br/>
+                    //          </h3>
+                    // </div>
+                // )
+            // });
+        // };
 
 
         return (

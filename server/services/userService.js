@@ -18,6 +18,38 @@ export let checkUsers = (user, next) => {
     User.findOne({ userName: user.userName }, next);
 };
 
+export let pushWishlist = (userId, wishlist, next) => {
+    console.log(userId, wishlist);
+    User.update({ _id: userId }, { $push: { wishlists: wishlist } }, (error) => {
+        console.log(error);
+        User.findOne({ _id: userId }, (err, data) => {
+            next(err, data);
+        });
+    });
+}
+
+export let deleteWishlist = (userId, wishlistId, next) => {
+    User.findOne({ _id: userId }, (error, user) => {
+        //console.log
+        if (user && user.wishlists) {
+            let cloneArray = user.wishlists.slice();
+            
+            user.wishlist.forEach(function (s, index) {
+                if (s._id.toString() === wishlistId) {
+                    cloneArray.splice(index, 1);
+                    console.log(cloneArray.length + ': ' + user.wishlists.length);
+                }
+            });
+            user.wishlists = cloneArray;
+            //console.log(`saving user ${user}`);
+            user.save((err, data) => {
+                next(err, data);
+            });
+        }
+
+    });
+}
+
 // export let getAllUsers = (next) => {
 //     User.find({}, next);
 // };

@@ -33,23 +33,25 @@ class App extends React.Component {
         let loggedIn = this.props.loggedIn;
         return (
             <BrowserRouter>
-                <div>
-                    <Route path='/' render={(routeProps) => {
-                        if(!loggedIn){
-                            return <LoginPage {...this.props} {...routeProps} />
-                        }
-                        else {
-                            return <Redirect to="/secure" />
-                        }
-                        }} />
-                    <Route path="/secure" render={(routeProps) => {
-                        if(loggedIn){
-                            return <Authenticate {...this.props} {...routeProps} />
-                        }
-                        else{
-                            return <Redirect to="/"/>
-                        }
-                    }}/>
+                <div className="row">
+                    <div className="col s12">
+                        <Route path='/' render={(routeProps) => {
+                            if(!loggedIn){
+                                return <LoginPage {...this.props} {...routeProps} />
+                            }
+                            else {
+                                return <Redirect to="/secure" />
+                            }
+                            }} />
+                        <Route path="/secure" render={(routeProps) => {
+                            if(loggedIn){
+                                return <Authenticate {...this.props} {...routeProps} />
+                            }
+                            else{
+                                return <Redirect to="/"/>
+                            }
+                        }}/>
+                    </div>
                 </div>
             </BrowserRouter>
         );
