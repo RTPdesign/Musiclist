@@ -3,8 +3,8 @@
  * Services are used to abstract out the logic needed to enact on data, before sending it off to the database. 
  */
 import User from '../models/User';
-import Wishlist from '../models/Wishlist';
-// import {Task} from '../models/Task';
+import {Wishlist} from '../models/Wishlist';
+
 
 export let createUser = (user, next) => {
     User.create(user, next);
@@ -19,7 +19,8 @@ export let checkUsers = (user, next) => {
 };
 
 export let pushWishlist = (userId, wishlist, next) => {
-    console.log(userId, wishlist);
+    wishlist = new Wishlist(wishlist); // you will need to do this line when  you add albums to a wishlist too.
+    console.log(wishlist);
     User.update({ _id: userId }, { $push: { wishlists: wishlist } }, (error) => {
         console.log(error);
         User.findOne({ _id: userId }, (err, data) => {

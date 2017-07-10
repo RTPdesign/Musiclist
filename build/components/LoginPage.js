@@ -61,7 +61,6 @@ handleClick(event){
           <div className="col x16"> 
             <div>
                 <div className="flexLogin">
-                  {/*<img src="http://brokensocialscene.craft-shop.ca/image/cache/catalog/hugofthunder2-500x500.jpg" height="300" width="300"/>*/}
                   <label><input type='userName' autoComplete='on' placeholder='User Name' ref='userName' maxLength="50" required/></label>
                   <label><input type='password' placeholder='Password' ref='password' maxLength="100" required/></label>
                   <button type='button' onClick={this.handleClick}>Log In</button>

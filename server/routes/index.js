@@ -57,9 +57,7 @@ export default (app) => {
     });
 
     app.get('/wishlists', (req, res) => {
-        res.json({wishlists: [
-            {title: 'Hello', albums: []}
-        ]});
+        res.json([{title: 'Hello', _id: 123, albums: []}])
     });
 
     app.put('/users/:userId/wishlists', (req, res) => {

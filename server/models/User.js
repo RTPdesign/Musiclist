@@ -9,7 +9,7 @@ import {WishlistSchema} from './Wishlist';
 let userSchema = mongoose.Schema({
     userName:  { type: String, unique: true },
     password: { type: String, required: true },
-    wishlists: WishlistSchema
+    wishlists: {type: [WishlistSchema], default: []}
 });
 
 export default mongoose.model('User', userSchema);

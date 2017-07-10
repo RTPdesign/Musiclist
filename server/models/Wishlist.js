@@ -23,9 +23,8 @@ let Album = {
       id: {type: Number}
 };
 let wishlistSchema = mongoose.Schema({
-    id: {type: String},
-    title: {type: String, required: true, unique: true },
-    albums: [{type: Album}]
+    title: {type: String, required: true, unique: true},
+    albums: [{type: Album, default: []}]
 });
 
 export let Wishlist =  mongoose.model('Wishlist', wishlistSchema);
