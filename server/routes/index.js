@@ -75,9 +75,9 @@ export default (app) => {
         });
     });
 
-    app.put('/users/:userId/wishlists/:index', (req, res) => {
+    app.put('/users/:userId/wishlists/:wishlistId', (req, res) => {
         console.log(req.params, req.body);
-        UserService.putWishList(req.params.userId, req.params.index, req.body, (err, user) => {
+        UserService.putWishList(req.params.userId, req.params.wishlistId, req.body, (err, user) => {
             let response;
             if (!err && user) {
                 response = user;

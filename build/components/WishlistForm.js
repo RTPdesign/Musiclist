@@ -37,14 +37,25 @@ export default class WishlistForm extends React.Component{
         }
     }
 
-    updateWishlist(index){
+ 
+
+    updateWishlist(){
         console.log(this.refs);
-        let updatedTitle = this.refs['wishlist-'+index].value;
+        let updatedTitle = this.refs[this.props.wishlist._id + '-wishlistform'].value;
         let userId = this.props.user._id;
-        axios.put(`/users/${userId}/wishlists/${index}`, {wishlist: this.props.wishlist}).then(() => {
-            this.props.updateWishlistTitle(index, updatedTitle);
+        let wishlistId = this.props.wishlist._id;
+        axios.put(`/users/${userId}/wishlists/${wishlistId}`, {title: updatedTitle, albums: [/*eventually when we have albums working*/]}).then((response) => {
+            if(response.data){
+                this.props.editWishlistTitle(wishlistId, updatedTitle);
+            }
+            else {
+                console.error('EXCEPTIPN: ' + response);
+            }
         });
     }
+
+
+
 
     render(){ 
         let buttonText = 'Create Wishlist';
@@ -58,8 +69,8 @@ export default class WishlistForm extends React.Component{
             dynamicAction = this.updateWishlist;
             wishlistTitle = this.props.wishlist.title;
             albumList = <AlbumList albums={this.props.wishlist.albums} />
-            inputElement = (<input className="yellow lighten-5" type="text" placeholder='Wishlist Name' maxLength="1000" required value={wishlistTitle} 
-                        onChange={(event) => this.props.editWishlistTitle(this.props.wishlist, event.target.value)} />);
+            inputElement = (<input ref={`${this.props.wishlist._id}-wishlistform`} className="yellow lighten-5" type="text" placeholder='Wishlist Name' maxLength="1000" required value={wishlistTitle} 
+                        onChange={(event) => this.props.editWishlistTitle(this.props.wishlist._id, event.target.value)} />);
         }
 
         return (

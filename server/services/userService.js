@@ -29,13 +29,22 @@ export let pushWishlist = (userId, wishlist, next) => {
     });
 }
 
-export let putWishList = (userId, index, wishlist, next) => {
+export let putWishList = (userId, wishlistId, wishlist, next) => {
     console.log(wishlist);
     User.findOne({ _id: userId }, (error, user) => {
         if(user){
-            user.wishlists[index] = wishlist;
+            let theWishlist = null;
+            user.wishlists.forEach(wish => {
+                console.log(`${wish._id}===${wishlistId}`);
+                if(wish._id.toString() === wishlistId.toString()){
+                    console.log("Here");
+                    wish.title = wishlist.title;
+                    wish.albums = wishlist.ablums;
+                    theWishlist = wish;
+                }
+            });
             user.save((err, data) => {
-                next(err, user.wishlists[index]);
+                next(err, {wishlist: theWishlist});
             });
         }
         else {

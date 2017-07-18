@@ -47,24 +47,3 @@ export default class WishlistTitle extends React.Component{
         }
     }
 }
-
-{/*
-render() {
-        let allWishlists = [];
-        if (this.props.user.wishlists && this.props.user.wishlists.length > 0) {
-            allWishlists = this.props.user.wishlists.map((wishlist, index) => {
-                if(wishlist.showEdit) {
-                    return (<input onBlur={() => this.handleWishlistUpdate(index)} ref={'wishlist'+index} placeholder={wishlist.title}/>);
-                }
-                else {
-                    return (
-                        <div>
-                            <li onClick={() => this.handleWishlistClick(index)} key={wishlist._id}> {wishlist.title}</li>
-
-                        </div>
-                    );
-                }
-            })
-        }
-    }
- */}
