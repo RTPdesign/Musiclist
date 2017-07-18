@@ -24,18 +24,34 @@ export let pushWishlist = (userId, wishlist, next) => {
     User.update({ _id: userId }, { $push: { wishlists: wishlist } }, (error) => {
         console.log(error);
         User.findOne({ _id: userId }, (err, data) => {
-            next(err, data);
+            next(err, data.wishlists[data.wishlists.length - 1]); // gets the last wishlist on the users wishlist collection
         });
     });
 }
 
-export let deleteWishlist = (userId, wishlistId, next) => {
+export let putWishList = (userId, index, wishlist, next) => {
+    console.log(wishlist);
     User.findOne({ _id: userId }, (error, user) => {
+        if(user){
+            user.wishlists[index] = wishlist;
+            user.save((err, data) => {
+                next(err, user.wishlists[index]);
+            });
+        }
+        else {
+            console.log(err);
+            next(err);
+        }
+    });
+}
+
+export let deleteWishlist = (userId, wishlistId, next) => {
+    User.findOne({ _id: userId }, (err, user) => {
         //console.log
         if (user && user.wishlists) {
             let cloneArray = user.wishlists.slice();
             
-            user.wishlist.forEach(function (s, index) {
+            user.wishlists.forEach(function (s, index) {
                 if (s._id.toString() === wishlistId) {
                     cloneArray.splice(index, 1);
                     console.log(cloneArray.length + ': ' + user.wishlists.length);

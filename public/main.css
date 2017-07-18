@@ -1,10 +1,21 @@
 *{
     font-size: 18px;
-    box-sizing: border-box;
+    box-sizing: border-box; 
+
     font-family: 'Lato', sans-serif;
     margin: 0 auto;
-    color: #2fa88a;
-}
+      color: #c4351b; 
+          /* position :relative;
+              float: center;
+    animation: mymove 2s; */
+  }
+
+  /* @keyframes mymove {
+    0%   {top: 0px;}
+    50%  {top: 100px;}
+
+  }   */
+
 
 .page-wrap {
   width: 1000px;
@@ -17,46 +28,56 @@
     float: right;
 }
 
-input {
+.in {
+    color: #c4351b;
     font-size: 20px;
-    padding: 5px 15px;
-    margin: 8px;
+    /* float: left; */
+    padding: 0px 10px 0px 0px; 
+}
+
+.btn {
+    font-size: 18px;
+    margin: 5px;
+
+}
+
+.links {
+    color: #c4351b;
+    font-size: 20px;
+    float: left;  
+    padding: 1px 0px 30px 5px; 
 }
 
 h1 {
-    font-family: 'Lato', sans-serif;
-    /*color: #f9df7f;*/
-    color: whitesmoke;
+    color: #ffc700;
+    /* color: #fcc316; */
+     text-shadow: 0px 0.3px .3px #9e8c66; 
     font-size: 30px;
-    /*text-shadow: 0 1px 0 #a37642;*/
-    float: left;
-    padding: 15px;
 }
 
-a {
-    color: #a37642;
-    /*color: #a37642;*/
+ a {
+    color: #1de9b6;
     font-size: 40px;
     font-weight: 400;
-    float: left;
+    float: right;
     padding: 15px;
-}
+} 
 
 h2 {
     
-    color: #a37642;
+    color: #c4351b;
     /*color: #6eccba;*/
-    font-size: 25px;
-    float: left;
+    font-size: 15px;
     padding: 15px;
+    margin: 0px 30px 0px 0px;
 }
 
 h3 {
     /*float: left;*/
-    color: #a37642;
+    color: #1de9b6;
     /*color: #6eccba;*/
     font-size: 20px;
-    padding: 5px;
+    padding: 15px;
     margin: 50px 10px 0px 0px;
 }
 
@@ -70,32 +91,34 @@ h4 {
 
 html{
     
-        /*background-image: url("https://media.giphy.com/media/5xtDarrAeg6QeSUNSuI/giphy.gif");*/
-        /*background-image: url("https://media.giphy.com/media/vWCW09BvO7P5S/giphy.gif");*/
-        /*background-image: url("https://68.media.tumblr.com/9f99c544c27c6a749bda713618c0871f/tumblr_om25r0YuuE1r47bczo1_500.gif");*/
-        /*background-image: url("https://az616578.vo.msecnd.net/files/2016/06/27/636025939249776048845530468_recordplayer.gif");*/
-        /*Zbackground-image: url("https://waxramblearchive.files.wordpress.com/2013/05/iyu1vmk.gif");*/
+         /* background-image: url("https://media.giphy.com/media/5xtDarrAeg6QeSUNSuI/giphy.gif");  */
+         /* background-image: url("https://media.giphy.com/media/vWCW09BvO7P5S/giphy.gif");  */
+         /* background-image: url("https://68.media.tumblr.com/9f99c544c27c6a749bda713618c0871f/tumblr_om25r0YuuE1r47bczo1_500.gif");    */
+         /* background-image: url("https://az616578.vo.msecnd.net/files/2016/06/27/636025939249776048845530468_recordplayer.gif");  */
+         /* background-image: url("https://waxramblearchive.files.wordpress.com/2013/05/iyu1vmk.gif");  */
 
-        /*background-image: url("http://music.howwe.biz/images/giphy.gif");*/
-        /*background-image: url("https://cdn.dribbble.com/users/8666/screenshots/2151918/4musictrandrib.gif");*/
-        /*background-image: url("http://www.picgifs.com/glitter-gifs/m/music/picgifs-music-575108.gif");*/
-        /*background-image: url("http://vinylgif.com/gifs/201411/frank-sinatra---something-stupid-vinyl-record-player.gif");*/
-        /*background-image: url("http://vinylgif.com/gifs/201412/casette-vs-vinyl-animation.gif");*/
-        /*background-image: url("https://ksr-ugc.imgix.net/assets/003/922/362/4250c43fea92fdb480c75bcfb635f55f_original.gif?w=680&fit=max&v=1433437655&auto=format&gif-q=50&q=92&s=717d717b33800c71f6e556bc012da67b");*/
-        /*background-image: url("http://www.romainhalsdorf.com/turntable1.gif");*/
-        /*background-image: url("https://media.giphy.com/media/sqNK2OCkxycAo/giphy.gif");*/
-        /*background-image: url("https://media.giphy.com/media/26tn7BL2UDTMVWovu/giphy.gif");*/
-        /*Zbackground-image: url("https://media.giphy.com/media/ThQu29EPeMWzu/giphy.gif");*/
-        /*background-image: url("https://media.giphy.com/media/OtzkMCnyIq5qM/source.gif");*/
-        /*background-image: url("https://media.giphy.com/media/tCK59OvZkEWsM/source.gif");*/
-    opacity: 0.8;
-    /*background-image: url("https://68.media.tumblr.com/b1a0ea765a3b771e7318addbead23e55/tumblr_oosglvwr9z1r47bczo1_400.gif");*/
-    /*background-image: url("http://vinylgif.com/gifs/201411/beach-record-player.gif");*/
+        /* background-image: url("http://music.howwe.biz/images/giphy.gif"); */
+         /* background-image: url("https://cdn.dribbble.com/users/8666/screenshots/2151918/4musictrandrib.gif");  */
+        /* background-image: url("http://www.picgifs.com/glitter-gifs/m/music/picgifs-music-575108.gif"); */
+        /* background-image: url("http://vinylgif.com/gifs/201411/frank-sinatra---something-stupid-vinyl-record-player.gif"); */
+        /* background-image: url("http://vinylgif.com/gifs/201412/casette-vs-vinyl-animation.gif"); */
+        /* background-image: url("https://ksr-ugc.imgix.net/assets/003/922/362/4250c43fea92fdb480c75bcfb635f55f_original.gif?w=680&fit=max&v=1433437655&auto=format&gif-q=50&q=92&s=717d717b33800c71f6e556bc012da67b"); */
+        /* background-image: url("http://www.romainhalsdorf.com/turntable1.gif"); */
+        /* background-image: url("https://media.giphy.com/media/sqNK2OCkxycAo/giphy.gif"); */
+        /* background-image: url("https://media.giphy.com/media/26tn7BL2UDTMVWovu/giphy.gif"); */
+        /* background-image: url("https://media.giphy.com/media/ThQu29EPeMWzu/giphy.gif"); */
+        /* background-image: url("https://media.giphy.com/media/OtzkMCnyIq5qM/source.gif"); */
+        /* background-image: url("https://media.giphy.com/media/tCK59OvZkEWsM/source.gif"); */
+         /* background-image: url("http://i.imgur.com/cX8ETUc.gif");  */
+    opacity: 0.95;
+          /* background-image: url("https://68.media.tumblr.com/b1a0ea765a3b771e7318addbead23e55/tumblr_oosglvwr9z1r47bczo1_400.gif");       */
+     
+           background-image: url("http://vinylgif.com/gifs/201411/beach-record-player.gif");        
     
-    background: linear-gradient(to bottom right, #232323, #2d3a37);
+        /* background: linear-gradient(to bottom right, #232323, #2d3a37);     */
 
     background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 
     height: 100%;
 

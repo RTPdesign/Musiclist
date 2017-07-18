@@ -1,34 +1,44 @@
 import React from 'react';
 import axios from 'axios';
 
-export default class WishlistForm extends React.Component{
-
-    constructor(){
+export default class AlbumList extends React.Component {
+    constructor() {
         super();
-        this.state = {
-            albums: []
-        };
+        this.addAlbums = this.addAlbums.bind(this);
+        // this.renderAlbums = this.renderAlbums.bind(this);
     }
-    componentWillMount(){
-        axios.get('/albums').then((response) => {
-            console.log(response);
-            this.setState({
-                ablums: response.data.albums
-            });
-        });
+
+    // componentWillMount() {
+    //     axios.get('/albums').then(response => {
+    //         console.log(response);
+    //         this.props.loadAlbums(response.data.albums);
+    //         });
+    // }
+
+    addAlbums() {
+
     }
-    renderAlbums(){
-        return this.state.albums.map(ablum => {
-            return (<div>{album.title}</div>);
-        });
-    }
+
+    // renderAlbums(){
+    //     return this.state.albums.map(album => {
+    //         return (<div>{album.title}</div>);
+    //     });
+    // }
+
+
     render(){
-        return(
+
+
+        return (
             <div>
-                <label htmlFor="title">Title</label>
+                {/*<label htmlFor="title">Title</label>
                 <input id="title" type="text" ref="title" name="title" />
-                <h5>Choose albums to add to your wishlist</h5>
-                {this.renderAlbums()}
+                
+                {this.renderAlbums()}*/}
+                <button className="btn waves-effect teal lighten-2 waves-light left" onClick={this.addAlbums()}>Add albums
+                      <i className="material-icons right">album</i></button>
+
+
             </div>
         )
     }

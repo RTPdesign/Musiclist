@@ -56,12 +56,12 @@ export default (app) => {
         });
     });
 
-    app.get('/wishlists', (req, res) => {
-        res.json([{title: 'Hello', _id: 123, albums: []}])
-    });
+ /*   app.get('/wishlists', (req, res) => {
 
-    app.put('/users/:userId/wishlists', (req, res) => {
+        res.json([{title: 'Hello', _id: 123, albums: []}]);
+    });*/
 
+    app.post('/users/:userId/wishlists', (req, res) => {
         console.log(req.params, req.body);
         UserService.pushWishlist(req.params.userId, req.body, (err, user) => {
             let response;
@@ -70,6 +70,20 @@ export default (app) => {
             }
             else {
                 response = { error: 'List can not be created.' };
+            }
+            res.json(response);
+        });
+    });
+
+    app.put('/users/:userId/wishlists/:index', (req, res) => {
+        console.log(req.params, req.body);
+        UserService.putWishList(req.params.userId, req.params.index, req.body, (err, user) => {
+            let response;
+            if (!err && user) {
+                response = user;
+            }
+            else {
+                response = { error: 'List can not be updated.' };
             }
             res.json(response);
         });

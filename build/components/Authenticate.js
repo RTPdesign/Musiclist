@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import LoginPage from './LoginPage';
 import UserPage from './UserPage';
+import WishlistPage from './WishlistPage';
 
 
 export default class Authenticate extends React.Component{
@@ -26,9 +27,21 @@ export default class Authenticate extends React.Component{
       
     return(
       <div>
-        <button type="button" onClick={this.handleUserHome}>Home</button>
-        <button type="button" onClick={this.handleLogout}>Log Out</button>
-        <Route path="/secure" render={() => <UserPage {...this.props} />}/>
+        <button className="btn waves-effect teal lighten-2 waves-light" onClick={this.handleUserHome}>Home
+                    <i className="material-icons right">music_note</i></button>
+
+        <button className="btn waves-effect teal lighten-2 waves-light right" onClick={this.handleLogout}>Log Out
+                    <i className="material-icons right">close</i></button>
+        <Switch>
+          
+          <Route path="/secure/wishlists/:wishlistId" render={(routeProps) => {
+            let myWishlist = this.props.user.wishlists.filter(wishlist => wishlist._id === routeProps.match.params.wishlistId)[0];
+            console.log(myWishlist);
+            return <WishlistPage {...this.props} {...routeProps} wishlist={myWishlist} />
+          }} />
+          <Route path="/secure" render={() => <UserPage {...this.props} />} />
+        </Switch>
+
       </div>
     );
   }

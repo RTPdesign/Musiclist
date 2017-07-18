@@ -52,15 +52,16 @@ export default class Signup extends React.Component {
     render() {
         return (
             <div>
-                <h4>{this.state.registrationMsg}</h4>
-                <h3>Sign Up</h3>
-                <label>User Name: <input type="text" ref="username" /></label><br />
-                <label>Password: <input type="password" ref="password" /></label><br />
-                <label>Confirm Password: <input type="password" ref="passwordConfirm" /></label><br />
-                <button type="button" onClick={this.handleClick}>Sign Up</button>
-                <div>
-                    <button type="button" onClick={this.handleHome}>Home</button>
-                </div>
+
+                <label className="in"><input type="text" autoComplete='on' placeholder='User Name' ref="username" /></label><br/>
+                <label className="in"><input type="password" placeholder='Password' ref='password' maxLength="100" required/></label><br/>
+                <label className="in"><input type="password" placeholder='Confirm Password'  ref="passwordConfirm" required/></label><br/>
+                <button className="btn waves-effect teal lighten-2 waves-light" onClick={this.handleClick}>Sign Up
+                    <i className="material-icons right">music_video</i></button><span className="waves-effect hoverable material-icons right" onClick={this.handleHome}>close</span>
+                {/*<div>
+                    <button className="btn waves-effect waves-light" onClick={this.handleHome}>
+                    <i className="material-icons right">close</i></button>
+                </div>*/}
             </div>
         );
     }

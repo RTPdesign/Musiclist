@@ -1,30 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 
+import {Link} from 'react-router-dom';
+
 export default class Wishlists extends React.Component {
     constructor() {
         super();
-/*        this.state = {
-            users: []
-        };*/
+        this.handleWishlistDelete = this.handleWishlistDelete.bind(this);
     }
 
     componentWillMount() {
-        axios.get('/wishlists').then(response => {
-            // debugger;
-            this.props.loadWishlists(response.data);
-    //         //data will have an object of response.data.users list...
-    //         // console.log(response.data);
-    //         // if (response.data) {
-    //         //     this.setState({
-    //         //         users: response.data
-    //         //     });
-    //         // }
-    //     }).catch(function(err){
-          
-    //       debugger;
-    //       console.log(err);
-        });
+       // code that we need before the component mounts
     }
 
     handleChange(field, event) {
@@ -35,58 +21,47 @@ export default class Wishlists extends React.Component {
         this.props.history.push('/secure');
     };
 
+    handleWishlistDelete(wishlistId) {
+        let userId = this.props.user._id;
+        axios.delete(`/users/${userId}/wishlists/${wishlistId}`).then(() => {
+            this.props.deleteWishlist(wishlistId);
+        });
+    } 
+
     render() {
         let allWishlists = [];
         console.log(this.props.user.wishlists)
         console.log(this.props.user.wishlists.length);
-    if(this.props.user.wishlists && this.props.user.wishlists.length > 0){
-        console.log('This is /////sdf')
-      allWishlists = this.props.user.wishlists.map(wishlist => <li key={wishlist._id}> {wishlist.title}</li>);
-    }
+        if (this.props.user.wishlists && this.props.user.wishlists.length > 0) {
+            console.log('There are Wishlists');
+            console.log(this.props.user.wishlists);
+            allWishlists = this.props.user.wishlists.map(wishlist => (
+                <li key={wishlist._id}>
+                    <span className="waves-effect hoverable material-icons tiny left" onClick={() => this.handleWishlistDelete(wishlist._id)}>
+                        cancel
+                    </span>
+                    <Link className="links container left" to={`/secure/wishlists/${wishlist._id}`}> {wishlist.title}</Link>
+
+                </li>
+            ));
+
+        }
           
-        return (            
+        return (
             <div>
-                <h2>Wishlists</h2>
-                <ul>
-                    {allWishlists}
-                </ul>
+
+                <div className="row">
+                    <div className="col s2 m2 l2 xl2">
+                        <ul>
+                            {allWishlists}
+                        </ul>
+                    </div>
+                </div>
             </div>);
       };
     
     }
-//     return allWishlists;
-//   }
 
-        //     console.log('This our wishlist');
-        //     console.log(this.props);
-        // let wishList = [];
-        // wishList = this.props.user.wishlists.map(user => {
-        //     return (<li key={status._id + '-status'}>{status.status + ' '}<button onClick={() => {
-        //     this.handleDelete(status._id);
-        // }}>Remove Status</button></li>);
-        // });
-        // if (this.state.users && this.state.users.length > 0) {
-            // wishList = this.state.users.map(user => {
-                
-                // return (
-                    // <div key={user._id + '-user'}>
-                    //      <h2><a href="#">{user.firstName + ' '} {user.lastName}</a></h2>
-                    //      <h3>{user.email}<br/>
-                    //          {user.age}<br/>
-                    //          {user.gender}<br/>
-                    //          {user.school}<br/>
-                    //          {user.job}<br/>
-                    //          </h3>
-                    // </div>
-                // )
-            // });
-        // };
+            {/* */}
 
 
-//         return (
-//             <div>
-//                 <h3>Wishlists</h3>
-//                 {wishList}
-//             </div>)
-//     }
-// }

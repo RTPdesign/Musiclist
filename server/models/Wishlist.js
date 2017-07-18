@@ -23,7 +23,7 @@ let Album = {
       id: {type: Number}
 };
 let wishlistSchema = mongoose.Schema({
-    title: {type: String, required: true, unique: true},
+    title: {type: String},
     albums: [{type: Album, default: []}]
 });
 

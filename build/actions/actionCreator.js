@@ -17,6 +17,13 @@ export let login = (user, loggedIn) => {
     };
 }
 
+export let logout = () => {
+    console.log('dispatch LOGOUT');
+    return {
+        type: 'LOGOUT',
+    };
+}
+
 export let loadWishlists = (wishlists) => {
     console.log('dispatch load wishlists');
     return {
@@ -25,18 +32,41 @@ export let loadWishlists = (wishlists) => {
     };
 }
 
-export let logout = () => {
-    console.log('dispatch LOGOUT');
+export let createWishlist = (wishlist) => {
     return {
-        type: 'LOGOUT',
+        type: 'CREATE_WISHLIST',
+        wishlist
     };
 }
 
-export let createWishlist = (userId, name) => {
+export let updateWishlistTitle = (index, updateWishlistTitle) => {
     return {
-        type: 'CREATE_WISHLIST',
-        userId,
-        name
+        type: 'UPDATE_WISHLIST_TITLE',
+        index,
+        title: updateWishlistTitle
+    };
+}
+
+export let editWishlistTitle = (wishistId, updateWishlistTitle) => {
+    console.log('editing wishlist title... to...' + updateWishlistTitle);
+    return {
+        type: 'EDIT_WISHLIST_TITLE',
+        wishlistId: wishistId,
+        title: updateWishlistTitle
+    };
+}
+
+export let updateWishlistClick = (index) => {
+    return {
+        type: 'UPDATE_WISHLIST_CLICK',
+        index
+    };
+}
+
+export let deleteWishlist = (wishlistId) => {
+    return {
+        type: 'DELETE_WISHLIST',
+        wishlistId
     };
 }
 
@@ -47,10 +77,18 @@ export let fetchWishlist = (listId) => {
     };
 }
 
-export let deleteWishlist = (listId) => {
+export let loadAlbums = (albums) => {
+    console.log('dispatch load albums');
     return {
-        type: 'DELETE_WISHLIST',
-        listId
+        type: 'LOAD_ALBUMS',
+        albums
+    };
+}
+
+export let addAlbums = (albums) => {
+    return {
+        type: 'ADD_ALBUMS',
+        albums
     };
 }
 
