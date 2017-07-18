@@ -8,6 +8,7 @@ export default class LoginPage extends React.Component {
   constructor() {
     super();
     this.handleClick = this.handleClick.bind(this);
+    this.handleRTP = this.handleRTP.bind(this);
     this.handleSignup = this.handleSignup.bind(this);
 
     this.state = {
@@ -45,10 +46,12 @@ export default class LoginPage extends React.Component {
     }
   }
 
+  handleRTP() {
+    location.replace("http://rtpdesign.com");
+  };
+
   handleSignup() {
-
     this.props.history.push('/signup');
-
   };
 
   render() {
@@ -59,7 +62,10 @@ export default class LoginPage extends React.Component {
     return (
       <div className="card yellow lighten-5" >
         <div className="card-content">
-          <span className="card-title material-icons center"><h1>Welcome to Musiclist</h1>remove_red_eye favorite music_note</span>
+          <h1>Welcome to Musiclist</h1>
+          <span className="card-title waves-effect material-icons center" onClick={this.handleRTP}>
+                        remove_red_eye favorite music_note
+                    </span>
           <label className="in"><input type='text' autoComplete='on' placeholder='User Name' ref='userName' maxLength="50" required /></label>
           <label className="in"><input type='password' placeholder='Password' ref='password' maxLength="100" required /></label>
           <button className="btn waves-effect teal lighten-2 waves-light" onClick={this.handleClick}>Log In
