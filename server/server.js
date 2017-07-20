@@ -37,7 +37,8 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 // connection string. 
-mongoose.connect(`mongodb://localhost/${process.env.DB}`);
+// mongoose.connect(`mongodb://localhost/${process.env.DB}`);
+mongoose.connect(`${process.env.DB}`);
 
 Routes(app);
 
