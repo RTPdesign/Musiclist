@@ -1,5 +1,5 @@
 'use strict';
-// import env from './env';
+import env from './env';
 import express from 'express';
 import handlebars from 'express-handlebars';
 import http from 'http';
