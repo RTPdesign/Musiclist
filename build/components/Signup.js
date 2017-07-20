@@ -6,10 +6,10 @@ export default class Signup extends React.Component {
     constructor() {
         super();
         
-        this.state = {
-            registrationMsg: "",
-                invalidLogin: false
-        }
+        // this.state = {
+        //     registrationMsg: "",
+        //         invalidLogin: false
+        // }
         this.handleClick = this.handleClick.bind(this);
         this.handleHome = this.handleHome.bind(this);
     }
@@ -35,7 +35,7 @@ export default class Signup extends React.Component {
                     }
                     else{
                         console.log('User already Exists', res.data.user);
-                        this.setState({registrationMsg: "User already exits"});
+                        // this.setState({registrationMsg: {invalidLogin: true}});
                     }
 
                 });
@@ -50,10 +50,13 @@ export default class Signup extends React.Component {
     };
 
     render() {
+    // let errorMessage = null;
+    // if (this.state.errors.invalidLogin) {
+    //   errorMessage = (<h4>Invalidd</h4>);
+    // }
         return (
             <div>
-
-                <label className="in"><input type="text" autoComplete='on' placeholder='User Name' ref="username" /></label><br/>
+                <label className="in"><input type="text" autoComplete='on' placeholder='User Name' ref="username" maxLength="50" required/></label><br/>
                 <label className="in"><input type="password" placeholder='Password' ref='password' maxLength="100" required/></label><br/>
                 <label className="in"><input type="password" placeholder='Confirm Password'  ref="passwordConfirm" required/></label><br/>
                 <button className="btn waves-effect teal lighten-2 waves-light" onClick={this.handleClick}>Sign Up

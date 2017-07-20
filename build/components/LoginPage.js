@@ -57,36 +57,29 @@ export default class LoginPage extends React.Component {
   render() {
     let errorMessage = null;
     if (this.state.errors.invalidLogin) {
-      errorMessage = (<h4>Invalid Username or Password</h4>);
+      errorMessage = (<h4 className="container yellow lighten-5 center">Invalid Username or Password</h4>);
     }
     return (
       <div className="card yellow lighten-5" >
         <div className="card-content">
-          <h1>Welcome to Musiclist</h1>
-          <span className="card-title waves-effect material-icons center" onClick={this.handleRTP}>
-                        remove_red_eye favorite music_note
-                    </span>
-          <label className="in"><input type='text' autoComplete='on' placeholder='User Name' ref='userName' maxLength="50" required /></label>
-          <label className="in"><input type='password' placeholder='Password' ref='password' maxLength="100" required /></label>
-          <button className="btn waves-effect teal lighten-2 waves-light" onClick={this.handleClick}>Log In
+          <h1 className="center">Welcome to Musiclist</h1>
+          <span className="card-title waves-effect waves-red darken-4 material-icons center" onClick={this.handleRTP}>
+            remove_red_eye favorite music_note
+            </span>
+          <label className="in"><input type='text' id="UserName-field" autoComplete='on' placeholder='User Name' ref='userName' maxLength="50" required /></label>
+          <label className="in"><input type='password' id="Password-field" placeholder='Password' ref='password' maxLength="100" required /></label>
+          <button className="btn waves-effect teal lighten-2 waves-light" id="Login-button" onClick={this.handleClick}>Log In
                     <i className="material-icons right">music_note</i></button>
 
-          {errorMessage}
+          
 
           <button className="btn waves-effect teal lighten-2 waves-light right" onClick={this.handleSignup}>Sign Up
                       <i className="material-icons right">expand_more</i></button>
+          {errorMessage}            
           <Route path='/signup' render={(routeProps) => <Signup {...this.props} {...routeProps} />} />
 
         </div>
-
-        {/*<div className="card-reveal">
-          <span className="card-title orange-text text-darken-4">Sign Up<i className="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>*/}
       </div>
-
-
-
     );
   }
 }
